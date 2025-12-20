@@ -12,7 +12,7 @@ export const Hero = ()=>{
                 <Spotlight className="top-10 left-full md:-left-32 md:-top-20 h-[80vh] w-[50vw]" fill="purple"/>
                 <Spotlight className="top-28 left-80  h-[80vh] w-[50vw]  " fill="blue"/>
             </div>
-            <div className="absolute top-0 left-0  h-screen w-full flex items-center justify-center bg-black dark:bg-black">
+            <div className="absolute top-0 left-0  h-screen w-full flex items-center justify-center bg-white dark:bg-black">
                 <div
                     className={cn(
                     "absolute inset-0",
@@ -22,7 +22,7 @@ export const Hero = ()=>{
                     )}
                 />
                 {/* Radial gradient for the container to give a faded look */}
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
             </div>
             <div className="flex  justify-center  relative   z-10 ">
                     <div className="max-w-[100vw] md:max-w-2xl lg:max-w-100 flex flex-col items-center justify-center">
