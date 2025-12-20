@@ -9,7 +9,7 @@ export const Work = () => {
       <h1 className='heading'>A small selectiong of {' '}
         <span className='text-purple-300'>Recent Projects</span>
       </h1>
-      <div className='flex flex-1  flex-wrap items-center gap-16 justify-center p-4  mt-3 '>
+      <div className='flex   flex-wrap items-center sm:gap-3 lg:gap-16 justify-center p-4  mt-3 '>
           {projects.map(projects=>{
             return(
               <div>
