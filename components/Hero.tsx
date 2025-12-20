@@ -12,7 +12,7 @@ export const Hero = ()=>{
                 <Spotlight className="top-10 left-full md:-left-32 md:-top-20 h-[80vh] w-[50vw]" fill="purple"/>
                 <Spotlight className="top-28 left-80  h-[80vh] w-[50vw]  " fill="blue"/>
             </div>
-            <div className="absolute top-0 left-0  h-screen w-full flex items-center justify-center bg-white dark:bg-black">
+            <div className="absolute top-0 left-0  h-screen w-full flex items-center justify-center bg-black dark:bg-black">
                 <div
                     className={cn(
                     "absolute inset-0",
