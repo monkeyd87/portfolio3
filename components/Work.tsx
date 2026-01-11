@@ -10,9 +10,9 @@ export const Work = () => {
         <span className='text-purple-300'>Recent Projects</span>
       </h1>
       <div className='flex   flex-wrap items-center sm:gap-3 lg:gap-16 justify-center p-4  mt-3 '>
-          {projects.map(projects=>{
+          {projects.map((projects,i)=>{
             return(
-              <div>
+              <div key={i}>
                 <Card otherclassName="" {...projects}/>
               </div>
             )
