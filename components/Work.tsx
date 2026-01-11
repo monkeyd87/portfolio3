@@ -5,7 +5,7 @@ import { DottedGlowBackground } from './ui/DottedGlowBackground'
 
 export const Work = () => {
   return (
-   <div className='py-20 w-full mt-5 rounded-4xl relative bg-[#07080c] ' >
+   <section className=' work py-20 w-full mt-5 rounded-4xl relative bg-[#07080c] ' >
       <h1 className='heading'>A small selectiong of {' '}
         <span className='text-purple-300'>Recent Projects</span>
       </h1>
@@ -18,7 +18,7 @@ export const Work = () => {
             )
           })}
       </div>
-   </div>
+   </section>
   )
 }
 
