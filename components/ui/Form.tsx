@@ -1,68 +1,71 @@
-"use client"
-import { useState } from "react";
-import { MagicButton } from "./MagicButton";
-import {BackgroundGradientAnimation} from './GradientBg'
-import { testimonials } from "@/data";
+"use client";
 
-export const Form =({onsubmit}:{onsubmit:()=>{}}) =>{
-  const [form, setForm] = useState({
+import React, { useState } from "react";
+import { MagicButton } from "./MagicButton";
+import { BackgroundGradientAnimation } from "./GradientBg";
+
+type FormData = {
+  name: string;
+  title: string;
+  quote: string;
+};
+
+export const Form = ({ onSubmit }: { onSubmit: (data: FormData) => void }) => {
+  const [form, setForm] = useState<FormData>({
     name: "",
     title: "",
     quote: "",
   });
 
-  const handelSubmit = (e:React.FormEvent)=>{
-    e.preventDefault()
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit(form);
 
-    onsubmit(form)
-
-  }
+    // optional: clear after submit
+    setForm({ name: "", title: "", quote: "" });
+  };
 
   return (
     <div className="relative flex min-h-[70vh] items-center justify-center px-6">
-      {/* Floating gradient orbs */}
-
-      {/* Gradient border */}
       <div className="relative w-full max-w-xl rounded-3xl bg-gradient-to-br overflow-hidden from-white/20 via-white/10 to-white/5 p-[1px]">
         <BackgroundGradientAnimation />
-        {/* Glass card */}
+
         <div className="relative rounded-3xl border border-white/10 bg-black/40 p-8 backdrop-blur-xl">
           <h2 className="text-2xl font-semibold text-center text-white">
-            Send a message of encouragment.
+            Send a message of encouragement.
           </h2>
-         
 
-          <form className="mt-8 space-y-6">
+          {/* ✅ real form submit */}
+          <form onSubmit={handleSubmit} className="mt-8 space-y-6">
             <Field
-              label="name"
+              label="Name"
               value={form.name}
-              onChange={(v) => setForm({ ...form, name: v })}
+              onChange={(v) => setForm((prev) => ({ ...prev, name: v }))}
               placeholder="Name"
             />
 
             <Field
-              label="title"
-              value={form.quote}
-              onChange={(v) => setForm({ ...form, quote: v })}
+              label="Title"
+              value={form.title}
+              onChange={(v) => setForm((prev) => ({ ...prev, title: v }))}
               placeholder="Title"
             />
 
             <TextArea
-              label="qutoe"
+              label="Quote"
               value={form.quote}
-              onChange={(v) => setForm({ ...form, quote: v })}
+              onChange={(v) => setForm((prev) => ({ ...prev, quote: v }))}
               placeholder="Write something meaningful..."
             />
 
-          <MagicButton title='Submit' otherClasses="w-100" onClick={handelSubmit}/>
+            {/* ✅ submit button */}
+            <MagicButton title="Submit" otherClasses="w-full"/>
           </form>
-
-
         </div>
       </div>
     </div>
   );
-}
+};
 
 function Field({
   label,
