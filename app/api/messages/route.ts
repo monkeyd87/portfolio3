@@ -4,13 +4,19 @@ import { Message } from "@/models/Message";
 
 
 export async function GET() {
-  const conn = await connectDB();
-  console.log("Connected to:", Message.db.name);
-  const messages =  await Message.find().lean()
-  if( messages.length === 0) return NextResponse.json({message:'no message found'})
+  try{
+    const conn = await connectDB();
+    console.log("Connected to:", Message.db.name);
+    const messages =  await Message.find().lean()
+    if( messages.length === 0) return NextResponse.json({message:'no message found'})
+  
+  
+    return NextResponse.json(messages);
 
-
-  return NextResponse.json(messages);
+  }catch(err){
+    console.log(err)
+    return NextResponse.json({messae:'server error'})
+  }
 }
 
 

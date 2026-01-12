@@ -23,13 +23,13 @@ export async function connectDB() {
 
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(MONGODB_URI!, {
-        dbName: process.env.MONGODB_DBNAME, // optional
-      })
+      .connect(MONGODB_URI!)
       .then((m) => m);
   }
+  
 
   cached.conn = await cached.promise;
+  
   return cached.conn;
 }
 

@@ -86,3 +86,49 @@
     }
   }
 }
+
+
+/* Vertical marquee: moves content up by half its height (because we duplicated items) */
+.marqueeY {
+  animation: marqueeY var(--duration, 20s) linear infinite;
+  will-change: transform;
+}
+
+.marqueeY-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marqueeY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Optional: pause on hover */
+@media (hover: hover) {
+  .marqueeY:hover {
+    animation-play-state: paused;
+  }
+}
+
+
+.marquee-col {
+  animation: marqueeY var(--duration, 20s) linear infinite;
+  will-change: transform;
+}
+
+.marquee-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marqueeY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
