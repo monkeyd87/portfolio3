@@ -7,22 +7,31 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 type FormData = {
   name: string;
   title: string;
-  quote: string;
+  message: string;
 };
 
 export const Form = ({ onSubmit }: { onSubmit: (data: FormData) => void }) => {
   const [form, setForm] = useState<FormData>({
     name: "",
     title: "",
-    quote: "",
+    message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const res = await fetch('/api/messages',{
+      method:'POST',
+      headers:{
+        'content-type':"application/json"
+      },
+      body: JSON.stringify(form)
+
+    })
+    
     onSubmit(form);
 
     // optional: clear after submit
-    setForm({ name: "", title: "", quote: "" });
+    setForm({ name: "", title: "", message: "" });
   };
 
   return (
@@ -53,8 +62,8 @@ export const Form = ({ onSubmit }: { onSubmit: (data: FormData) => void }) => {
 
             <TextArea
               label="Quote"
-              value={form.quote}
-              onChange={(v) => setForm((prev) => ({ ...prev, quote: v }))}
+              value={form.message}
+              onChange={(v) => setForm((prev) => ({ ...prev, message: v }))}
               placeholder="Write something meaningful..."
             />
 
