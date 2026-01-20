@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Grid } from "@/components/Grid"
 import {Work} from '@/components/Work'
 import { Messages } from "@/components/Messages";
+import { ModalMediaplayer } from "@/components/ui/ModalMediaplayer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
        <Grid />
        <Work/>
        <Messages/>
+       <ModalMediaplayer/>
       </div>
     </main>
   );

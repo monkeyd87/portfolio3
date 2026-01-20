@@ -76,15 +76,15 @@ export const projects = [
          img: '/images/onlyCooks.png',
          technologies_used: ["HTML", "CSS", "JavaScript", "React", "Node", "GraphQL", "Apollo"],
          github_link: 'https://github.com/zuetesei/cook-book',
-         deployed_link: 'https://onlycooks.herokuapp.com/',
+         deployed_link: 'https://newonlycooks.onrender.com/',
      },
      {
          id:2,
          title: 'Aesthete',
          img:'/images/aesthete.png',
          technologies_used: ["JavaScript","Node.js","MongoDB","HTML","CSS","BootStrap"],
-         github_link:'https://github.com/monkeyd87/aesthete' ,
-         deployed_link:'https://murmuring-inlet-34782.herokuapp.com/',
+         github_link:'https://github.com/monkeyd87/aesthete2.0' ,
+         deployed_link:'https://aesthete.onrender.com/',
         },
         {
             id:3,
@@ -92,32 +92,9 @@ export const projects = [
             img: '/images/qualitytime.png',
             technologies_used: ["HTML", "CSS", "JavaScript"],
             github_link:'https://joel57.github.io/Quality_Time/' ,
-            deployed_link:'https://monkeyd87.github.io/guessWhomGame//',
+            deployed_link:'https://joel57.github.io/Quality_Time/',
         },
-     {
-         id:4,
-         title: 'School Incident Reporter',
-         img: '/images/incident.png',
-         technologies_used: ["HTML", "CSS", "JavaScript", "React", "Node.js","Express,Bootstrap"],
-         github_link: 'https://github.com/monkeyd87/incidentreport',
-         deployed_link: 'https://wlcpincidentreport-b83c7d609aa0.herokuapp.com/#/home',
-     },
     
-     {   id:5,
-         title: 'Weather App',
-         img: '/images/weather.png',
-         technologies_used: ["HTML", "CSS", "JavaScript"],
-         github_link:'https://github.com/monkeyd87/weatherapp' ,
-         deployed_link:'https://monkeyd87.github.io/weatherapp/',
-     },
-     {   id:6,
-         title:"Driddit",
-         img:'/images/dreedit.png',
-         technologies_used: ["HTML", "CSS", "JavaScript", "React", "Node",'Bootstrap'],
-         github_link: 'https://github.com/monkeyd87/driddit',
-         deployed_link: 'https://monkeyd87.github.io/driddit',
-     },
-     
  ]
 export const testimonials = [
   {
